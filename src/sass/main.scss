@@ -1,0 +1,163 @@
+///////////////////////////////
+//COLORS
+$color-one: #e3e5e9;
+$color-two: #566eaa;
+$color-three: #283450;
+$color-white: #fff;
+$color-black: #000;
+//$color-grey-light: #eee;
+$color-grey-dark: #777; 
+
+////////////////////////////////
+// MIXINS
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+   @media only screen and (max-width: 37.5em) { @content }; //600px
+  }
+  @if $breakpoint == tab-port {
+   @media only screen and (max-width: 56.25em) { @content }; //900px
+  }
+  @if $breakpoint == tab-land {
+   @media only screen and (max-width: 75em) { @content }; //1200px
+  }
+  @if $breakpoint == big-desktop {
+   @media only screen and (min-width: 112.5em) { @content }; //1800px
+  }
+ }
+
+ ///////////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(tab-land) { //width < 1200px?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) { //width < 900px?
+    font-size: 50%;// 1rem = 8px, 8/16 = 50%
+  }
+  
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+}
+::selection {
+  background-color: $color-three;
+  color: $color-white;
+  
+}
+
+body {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: $color-white;
+}
+
+.App {
+  max-width: 70rem;
+  margin: 10rem auto;
+  background-color: $color-one;
+  padding: 3rem;
+}
+
+.header {
+ 
+ .logo {
+   width: 65%;
+   height: auto;
+ }
+  &__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: $color-three;
+    margin: 2rem auto;
+  }
+  &__text {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 400;
+    color: $color-two;
+  }
+  &__span {
+    color: $color-grey-dark;
+    font-size: 5rem;
+    display: inline-block;
+    padding: 0 1rem;
+  }
+}
+
+.todo-list {
+  margin: 2rem auto;
+
+  
+  &__list {
+    list-style: none;
+    font-size: 1.6rem;
+  }
+
+  &__item {
+    background-color: $color-three;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 .7rem 1rem rgba($color-black, .4);
+    cursor: pointer;
+    &:hover {
+      opacity: .7;
+      text-decoration: line-through;
+    }
+  }
+
+  &--empty {
+    font-size: 1.8rem;
+    margin: 2rem;
+    color:$color-grey-dark;
+  }
+
+
+}
+
+.form {
+  margin: 2rem;
+  text-align: center;
+  
+  &__input {
+    
+    width: 100%;
+    border: none;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 2rem auto;
+    box-shadow: .4rem .4rem .6rem rgba($color-black, .25) inset, 
+    -.6rem -.5rem .8rem rgba($color-white, .5) inset;
+  }
+
+  .btn {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 50%;
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+    background-color: $color-one;
+    border: none;
+    box-shadow: .4em .4rem 1.1rem rgba($color-black, .25), 
+    -1rem -1rem 1rem rgba($color-white, .7);
+    border-radius: .5rem;
+    transition: all .2s;
+    cursor: pointer;
+    
+    &:hover {
+      box-shadow: .4rem .4rem .6rem rgba($color-black, .25) inset, 
+      -.6rem -.5rem .8rem rgba($color-white, .5) inset;
+    }
+  }
+}
