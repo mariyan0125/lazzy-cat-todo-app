@@ -1,5 +1,5 @@
-# To Do List 
-**Created to-do list**
+# To Do APP 
+**Created to-do app**
 - React Hooks
 - React Context API
 - SASS
