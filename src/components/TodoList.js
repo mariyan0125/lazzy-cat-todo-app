@@ -14,6 +14,6 @@ export const TodoList = () => {
         })}
       </ul>  
     </div>) : (
-      <div className="todo-list--empty">No itemes on your to-do list.</div>
+      <div className="todo-list--empty">No items on your to-do list.</div>
     )
 }

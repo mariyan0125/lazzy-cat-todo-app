@@ -1,5 +1,7 @@
-///////////////////////////////
+/***************************
 //COLORS
+****************************/
+
 $color-one: #e3e5e9;
 $color-two: #566eaa;
 $color-three: #283450;
@@ -8,8 +10,10 @@ $color-black: #000;
 //$color-grey-light: #eee;
 $color-grey-dark: #777; 
 
-////////////////////////////////
+/***************************
 // MIXINS
+****************************/
+
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
    @media only screen and (max-width: 37.5em) { @content }; //600px
@@ -25,7 +29,9 @@ $color-grey-dark: #777;
   }
  }
 
- ///////////////////////////////////
+ /***************************
+// GENERAL
+****************************/
 * {
   margin: 0;
   padding: 0;
